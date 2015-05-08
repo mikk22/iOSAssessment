@@ -66,6 +66,7 @@ If you have any issue getting the API Key, please contact us, and we will provid
 
 ## Requirements
 
+* The application should compile without Error and run without crashing.
 * Objective-C or Swift.
 * You are allowed to use third party libraries with it's preference to handle dependencies. For any third party used within the project there must be a justification of its use.
 * You should choose the UI that fits better the requirements but the UI should be done using Auto Layout constraints.
