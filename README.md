@@ -3,7 +3,7 @@ Suitsupply iOS
 
 Assessment to test future iOS developers. 
 
-We hope you had as much fun as we do coding and pushing yourself with new challenges.
+We hope you had as much fun as we have coding and pushing yourself with new challenges.
 
 ## Introduction
 
@@ -11,16 +11,16 @@ In order to evaluate your skills and coding style we would like you to develop a
 
 ## Application
 
-We would like to have an small application that accomplishes the following.
+We would like to have a small application that accomplishes the following:
 
-1. The main screen will have a search text input where the user can search for any BestBuy product (e.g Mobile Devices as iPhones, HTCs, Samsung...) within any category or a category you prefer, once search button on the keyboard or a search button on the screen it's been pressed, you need to search for those products and return step 2. 
+1. The main screen will have a search text input where the user can search for any BestBuy product (e.g Mobile Devices as iPhones, HTCs, Samsung...) within any category or a category you prefer, once the search button on the keyboard, or the search button on the screen is been clicked, you need to search for those products and return to step 2. 
 
-2. Once the products are returned, then you will need to present them as a list with the following information.
+2. Once the products are returned, then you will need to present them as a list with the following information:
 	* Product Thumbnail.
 	* Product Name.
 	* Product Price.
 	 
-	When the user presses on any item within the list go to step 3.
+	When the user clicks on any item within the list go to step 3.
 
 3. The user should see the details of the product as follows:
 	* Product Image, bigger than the Thumbnail.
@@ -30,15 +30,15 @@ We would like to have an small application that accomplishes the following.
 	* Number of reviews by the customers.
 	* Review average.
 	* Description.
-	* Related products Button. If the user presses this button go to step 4.
-	* Accessories Button. If the user presses this button go to step 5.
+	* Related products Button. If the user clicks this button, go to step 4.
+	* Accessories Button. If the user clicks this button, go to step 5.
 
-4. A list view with the related products for the item showed. Every product should show the following information.
+4. A list view with the related products for the item showed. Every product should show the following information:
 	* Product Image.
 	* Product Name.
 	* Product Price.
 	 
-5. A grid list view with the accessories for the item shown. Every accessory should show the following information.
+5. A grid list view with the accessories for the item shown. Every accessory should show the following information:
 	* Product Image.
 	* Product Price.
 
@@ -61,7 +61,7 @@ If you have any issue getting the API Key, please contact us, and we will provid
 ## Procedure
 
 * Fork this repository and work on your own fork.
-* When you think your app matches the requirements and you are proud of the code you are going to push, make a pull request to this repository. We will review your code and we will likely make some comments about your code.
+* When you think your app matches the requirements and you are proud of the code you are going to push, make a pull request to this repository. We will review your code and we will comment inline about your code.
 * In your pull request, add a description of the solution you have implemented and any other issue we should take into account at the time of review.
 
 ## Requirements
