@@ -70,7 +70,7 @@ If you have any issue getting the API Key, please contact us, and we will provid
 * Objective-C or Swift.
 * You are allowed to use third party libraries with it's preference to handle dependencies. For any third party used within the project there must be a justification of its use.
 * You should choose the UI that fits better the requirements but the UI should be done using Auto Layout constraints.
-* You have 5 days to present a pull request with a solution, but the sooner the candidate presents a solution more chances the candidate will have.
+* You have 5 days to present a pull request with a solution, but the sooner you present a solution the more chances you will have.
 
 ## Plus
 
@@ -88,4 +88,4 @@ If you have any issue getting the API Key, please contact us, and we will provid
 
 Suitsupply Mobile team wishes you good luck and we are looking forward to see your code. 
 
-If you need help do not hesitate to contact us.
+If you need any help, please do not hesitate to contact us.
