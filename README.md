@@ -13,25 +13,25 @@ In order to evaluate your skills and coding style we would like you to develop a
 
 We would like to have a small application that accomplishes the following:
 
-1. The main screen will have a search text input where the user can search for any BestBuy product (e.g Mobile Devices as iPhones, HTCs, Samsung...) within any category or a category you prefer, once the search button on the keyboard, or the search button on the screen is been clicked, you need to search for those products and return to step 2. 
+1. The main screen will have a search text input where the user can search for any BestBuy product (e.g. Mobile Devices as iPhones, HTCs, Samsung...) within any category or a category you prefer, once the search button on the keyboard, or the search button on the screen has been pressed, you need to search for those products and return to step 2. 
 
-2. Once the products are returned, then you will need to present them as a list with the following information:
+2. Once the products are returned, you will then need to present them as a list with the following information:
 	* Product Thumbnail.
 	* Product Name.
 	* Product Price.
 	 
-	When the user clicks on any item within the list go to step 3.
+	When the user presses on any item within the list go to step 3.
 
 3. The user should see the details of the product as follows:
 	* Product Image, bigger than the Thumbnail.
 	* Product Name.
 	* Product Price.
 	* If the product is on sale, should show sale price.
-	* Number of reviews by the customers.
+	* Number of reviews by customers.
 	* Review average.
 	* Description.
-	* Related products Button. If the user clicks this button, go to step 4.
-	* Accessories Button. If the user clicks this button, go to step 5.
+	* Related products Button. If the user presses this button, go to step 4.
+	* Accessories Button. If the user presses this button, go to step 5.
 
 4. A list view with the related products for the item showed. Every product should show the following information:
 	* Product Image.
@@ -53,10 +53,10 @@ We'll send you an email with instructions on how to activate your new key.
 Once you've activated your key, you're ready to roll.
 
 ```
-If you have any issue getting the API Key, please contact us, and we will provide you one.
+If you have any issues getting the API Key, please contact us, and we will provide you with one.
 ```
 
-* Check out the [Best Buy Api Documentation](https://developer.bestbuy.com/documentation) to know how to get the information this test requires. 
+* Check out the [Best Buy Api Documentation](https://developer.bestbuy.com/documentation) to learn how to get the information this test requires. 
 
 ## Procedure
 
@@ -68,24 +68,24 @@ If you have any issue getting the API Key, please contact us, and we will provid
 
 * The application should compile without Error and run without crashing.
 * Objective-C or Swift.
-* You are allowed to use third party libraries with it's preference to handle dependencies. For any third party used within the project there must be a justification of its use.
-* You should choose the UI that fits better the requirements but the UI should be done using Auto Layout constraints.
-* You have 5 days to present a pull request with a solution, but the sooner you present a solution the more chances you will have.
+* You are allowed to use third party libraries with its preference to handle dependencies. For any third-party used within the project there must be a justification of its use.
+* You should choose the UI that fits the requirements but the UI should be done using Auto Layout constraints.
+* You have 5 days to present a pull request with a solution, but the sooner you present a solution the better.
 
 ## Plus
 
 * Landscape Orientation
-* Pagination or load more for the products list.
-* Functional programming.
-* Animations.
+* Pagination or load more for the products list
+* Functional programming
+* Animations
 * Unit Testing
 
-## Advices
+## Advice
 
-* Knowledge of Apple APIs.
-* Knowledge of design patterns.
-* Clean code.
+* Knowledge of Apple API's
+* Knowledge of design patterns
+* Clean code
 
-Suitsupply Mobile team wishes you good luck and we are looking forward to see your code. 
+The Suitsupply Mobile team wishes you good luck and we are looking forward to see your code. 
 
 If you need any help, please do not hesitate to contact us.
