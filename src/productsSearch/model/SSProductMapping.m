@@ -37,8 +37,8 @@
   DCObjectMapping* thumbnail = [DCObjectMapping mapKeyPath:@"thumbnailImage"
                                                toAttribute:@"thumbnailImage"
                                                    onClass:mappingClass];
-  DCObjectMapping* largeImage = [DCObjectMapping mapKeyPath:@"largeImage"
-                                                toAttribute:@"largeImage"
+  DCObjectMapping* largeImage = [DCObjectMapping mapKeyPath:@"image"
+                                                toAttribute:@"image"
                                                     onClass:mappingClass];
   DCObjectMapping* regularPrice = [DCObjectMapping mapKeyPath:@"regularPrice"
                                                   toAttribute:@"regularPrice"

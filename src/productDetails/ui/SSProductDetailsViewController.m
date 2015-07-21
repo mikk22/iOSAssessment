@@ -13,9 +13,16 @@
 #import "SSProductDetailsLoadingActions.h"
 #import "SSProductDetailsSearchDataSource.h"
 #import "SSProductImageCell.h"
+#import "SSProductDescriptionCell.h"
 
-NS_ENUM(NSUInteger, SSProductDetailsCells) {
+typedef NS_ENUM(NSUInteger, SSProductDetailsCells) {
   SSProductDetailsImageCell,
+  SSProductDetailsDescriptionCell,
+//  SSProductDetailsPriceCell,
+//  SSProductDetailsCustomerReviewsCell,
+//  SSProductDetailsRelatedProductsCell,
+//  SSProductDetailsAccessoriesCell,
+  SSProductDetailsCellsCount
 };
 
 @interface SSProductDetailsViewController()<JTModelDelegate>
@@ -28,6 +35,8 @@ NS_ENUM(NSUInteger, SSProductDetailsCells) {
 
 static NSString* const kSSProductImageCellIdentifier =
     @"SSProductImageCellIdentifier";
+static NSString* const kSSProductDescriptionCellIdentifier =
+    @"SSProductDescriptionCellIdentifier";
 
 @implementation SSProductDetailsViewController
 
@@ -52,6 +61,7 @@ static NSString* const kSSProductImageCellIdentifier =
 
   self = [super initWithNibName:nil bundle:nil];
   if (self) {
+    self.title = @"Product Details";
     SSProductDetailsLoadingActions* loadingActions =
         [[SSProductDetailsLoadingActions alloc] init];
     _dataLoader = [[SSProductDetailsLoader alloc] initWithActions:loadingActions
@@ -70,8 +80,14 @@ static NSString* const kSSProductImageCellIdentifier =
 
 - (void)setupTableView {
   self.tableView.tableFooterView = [[UIView alloc] init];
+  
   [self.tableView registerClass:[SSProductImageCell class]
          forCellReuseIdentifier:kSSProductImageCellIdentifier];
+  [self.tableView registerClass:[SSProductDescriptionCell class]
+         forCellReuseIdentifier:kSSProductDescriptionCellIdentifier];
+  
+  self.tableView.rowHeight = UITableViewAutomaticDimension;
+  self.tableView.estimatedRowHeight = 200.0;
 }
 
 - (void)setupRefreshControl {
@@ -94,31 +110,62 @@ static NSString* const kSSProductImageCellIdentifier =
   return 1;
 }
 
+- (NSInteger)tableView:(UITableView*)tableView
+    numberOfRowsInSection:(NSInteger)section {
+  return SSProductDetailsCellsCount;
+}
+
 - (CGFloat)tableView:(UITableView*)tableView
     heightForRowAtIndexPath:(NSIndexPath*)indexPath {
   switch (indexPath.row) {
     case SSProductDetailsImageCell:
-      return CGRectGetWidth(self.view.bounds);
+      return ceilf(CGRectGetWidth(self.view.bounds) / 2);
+    case SSProductDetailsDescriptionCell:
+      return UITableViewAutomaticDimension;
   }
   NSParameterAssert(NO);
   return 0;
 }
 
-- (NSInteger)tableView:(UITableView*)tableView
- numberOfRowsInSection:(NSInteger)section {
-  return 1;
-}
-
 - (UITableViewCell*)tableView:(UITableView*)tableView
         cellForRowAtIndexPath:(NSIndexPath*)indexPath {
-  SSProductImageCell* cell = (SSProductImageCell*)[tableView dequeueReusableCellWithIdentifier:kSSProductImageCellIdentifier
-                                                                        forIndexPath:indexPath];
-  
-  SSProduct* product = (SSProduct*)self.dataLoader.object;
-  [cell setImageURL:[NSURL URLWithString:product.thumbnailImage]];
+  UITableViewCell* cell;
+  switch (indexPath.row) {
+      case SSProductDetailsImageCell:
+      cell = [self productImageCellForTableView:tableView];
+      break;
+      case SSProductDetailsDescriptionCell:
+      cell = [self productDescriptionCellForTableView:tableView];
+      break;
+  }
   
   [cell setNeedsUpdateConstraints];
   [cell updateConstraintsIfNeeded];
+  return cell;
+}
+
+- (UITableViewCell*)productImageCellForTableView:(UITableView*)tableView {
+  NSIndexPath* indexPath =
+      [NSIndexPath indexPathForRow:SSProductDetailsImageCell inSection:0];
+  SSProductImageCell* cell = (SSProductImageCell*)[tableView
+      dequeueReusableCellWithIdentifier:kSSProductImageCellIdentifier
+                           forIndexPath:indexPath];
+
+  SSProduct* product = (SSProduct*)self.dataLoader.object;
+  NSString* imageURLString =  product.largeImage ?: product.thumbnailImage;
+  [cell setImageURL:[NSURL URLWithString:imageURLString]];
+  return cell;
+}
+
+- (UITableViewCell*)productDescriptionCellForTableView:(UITableView*)tableView {
+  NSIndexPath* indexPath =
+  [NSIndexPath indexPathForRow:SSProductDetailsDescriptionCell inSection:0];
+  SSProductDescriptionCell* cell = (SSProductDescriptionCell*)[tableView
+      dequeueReusableCellWithIdentifier:kSSProductDescriptionCellIdentifier
+                           forIndexPath:indexPath];
+
+  SSProduct* product = (SSProduct*)self.dataLoader.object;
+  [cell setProductName:product.name description:product.longDescription];
   return cell;
 }
 

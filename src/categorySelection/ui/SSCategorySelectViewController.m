@@ -89,8 +89,16 @@ static NSString* const kSSCategoryCellIdentifier = @"SSCategoryCellIdentifier";
 
 - (void)tableView:(UITableView*)tableView
     didSelectRowAtIndexPath:(NSIndexPath*)indexPath {
+  SSCategory* previousSelectedCategory = [self.delegate selectedCategoryForCategorySelectViewController:self];
   SSCategory* category = self.dataLoader.objects[indexPath.row];
   [self.delegate categorySelectViewController:self didSelectCategory:category];
+  if (previousSelectedCategory) {
+    NSUInteger row = [self.dataLoader.objects indexOfObject:previousSelectedCategory];
+    NSIndexPath* previousCateroySelectedIndexPath = [NSIndexPath indexPathForRow:row inSection:0];
+    [self.tableView reloadRowsAtIndexPaths:@[ previousCateroySelectedIndexPath ]
+                          withRowAnimation:UITableViewRowAnimationAutomatic];
+  }
+  
   [self.tableView reloadRowsAtIndexPaths:@[ indexPath ]
                         withRowAnimation:UITableViewRowAnimationAutomatic];
 }

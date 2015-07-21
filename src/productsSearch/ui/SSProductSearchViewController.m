@@ -111,14 +111,12 @@ static NSString* const kSSProductCellIdentifier = @"SSProductCellIdentifier";
 
 - (void)tableView:(UITableView*)tableView
     didSelectRowAtIndexPath:(NSIndexPath*)indexPath {
-//commented while not ready yet
-//
-//  SSProduct* product = self.dataLoader.objects[indexPath.row];
-//  SSProductDetailsViewController* productDetailsVc =
-//      [[SSProductDetailsViewController alloc] initWithProduct:product];
-//  [self.navigationController pushViewController:productDetailsVc animated:YES];
-
   [tableView deselectRowAtIndexPath:indexPath animated:NO];
+
+  SSProduct* product = self.dataLoader.objects[indexPath.row];
+  SSProductDetailsViewController* productDetailsVc =
+      [[SSProductDetailsViewController alloc] initWithProduct:product];
+  [self.navigationController pushViewController:productDetailsVc animated:YES];
 }
 
 #pragma mark - SSCategorySelectViewControllerDelegate

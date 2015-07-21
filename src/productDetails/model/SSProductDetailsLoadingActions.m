@@ -29,7 +29,7 @@
 - (NSURLRequest*)URLRequestWithKeyPath:(NSString*)keyPath
                             identifier:(NSString*)identifier {
   NSDictionary* requestParameters = @{
-    @"show":@"sku,name,largeImage,regularPrice,salePrice,onSale,"
+    @"show":@"sku,name,thumbnailImage,image,largeImage,regularPrice,salePrice,onSale,"
              "longDescription,customerReviewCount,customerReviewAverage,"
              "accessories,relatedProducts",
   };

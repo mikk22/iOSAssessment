@@ -10,4 +10,6 @@
 
 @interface SSProductDescriptionCell : UITableViewCell
 
+- (void)setProductName:(NSString*)name description:(NSString*)description;
+
 @end
